@@ -42,26 +42,34 @@
 
 ### 命名原则
 
-1. **中文优先**: 使用中文技术术语，保持语义完整
+1. **语言适配**: 根据用户使用语言决定（中文用户使用中文术语，英文用户使用英文术语）
 2. **关键词前置**: 将最重要的技术关键词放在文件名前部
 3. **结构清晰**: 主题 + 核心概念 + 技术要点
 4. **搜索友好**: 包含工程师常用的技术搜索词
 
 ### 具体规则
 
-- **语言**: 使用中文，可保留英文技术缩写（如RTOS、PLL、GPIO）
-- **长度**: 15-30个中文字符（不含扩展名）
+- **语言**: 适配用户偏好语言，可保留英文技术缩写（如RTOS、PLL、GPIO）
+- **长度**: 15-30个字符（不含扩展名）
 - **分隔符**: 使用下划线`_`连接各部分
 - **禁止**: 无序列号、无日期、无版本号（除非冲突）
 - **字符**: 允许中文、英文、数字、下划线
 
 ### 命名模板
 
+**中文模板:**
 ```
 [技术领域]_[核心概念]_[具体要点].txt
 ```
 
+**English Template:**
+```
+[Tech_Domain]_[Core_Concept]_[Specific_Point].txt
+```
+
 ### 优质文件名示例
+
+**中文示例:**
 
 | 技术主题 | 推荐文件名 |
 |---------|-----------|
@@ -71,12 +79,22 @@
 | CSS时钟安全 | `STM32时钟安全_CSS失效检测与自动切换.txt` |
 | 任务通知机制 | `FreeRTOS任务通信_任务通知实现原理.txt` |
 
+**English Examples:**
+
+| Technical Topic | Recommended Filename |
+|----------------|---------------------|
+| FreeRTOS Power Manager Priority | `FreeRTOS_Power_Manager_Task_Priority_Configuration.txt` |
+| STM32 PLL Configuration | `STM32_Clock_System_PLL_Configuration_Guide.txt` |
+| Reference Counting Implementation | `Embedded_Low_Power_Reference_Counting_Mechanism.txt` |
+| CSS Clock Security | `STM32_Clock_Security_CSS_Failure_Detection.txt` |
+| Task Notification Mechanism | `FreeRTOS_Task_Communication_Task_Notification_Principle.txt` |
+
 ### SEO优化要点
 
-- 包含具体技术栈名称（FreeRTOS、STM32、ESP32等）
+- 包含具体技术栈名称（FreeRTOS、STM32、ESP32、Linux、Docker等）
 - 使用标准技术术语而非口语化表达
-- 包含动作或状态词（配置、实现、机制、原理、详解）
-- 避免过于宽泛的词汇（如"教程"、"笔记"、"总结"）
+- 包含动作或状态词（配置、实现、机制、原理、详解 / Configuration, Implementation, Mechanism, Guide）
+- 避免过于宽泛的词汇（如"教程"、"笔记"、"总结" / tutorial, notes, summary）
 
 ### 文件名冲突处理
 

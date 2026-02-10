@@ -1,38 +1,53 @@
-# Technical Application Note Generator Skill
+# Technical Application Note Generator
 
-将技术讨论内容转化为结构化、原子化的应用笔记（Application Notes）的AI技能
+Convert technical discussions into structured, atomic Application Notes. Language adapts to user preference (Chinese or English).
 
-## 能做什么
+## Features
 
-- **自动生成技术笔记**：将零散的技术讨论整理成专业的应用笔记
-- **纯文本输出**：生成独立的 .txt 文件，便于版本控制和检索
-- **AI检索友好**：文件名采用 SEO 优化格式，方便被智能体搜索到
-- **一事一议**：每篇笔记只讲一个技术概念，内容精准聚焦
+- **Auto-generate technical notes**: Transform scattered technical discussions into professional application notes
+- **Plain text output**: Generate independent .txt files for version control and searchability
+- **AI-searchable**: SEO-optimized filenames for intelligent agent retrieval
+- **Atomic focus**: Each note covers exactly one technical concept
 
-## 适用场景
+## Use Cases
 
-- 整理嵌入式系统、RTOS、电源管理等技术讨论
-- 将会议记录或技术交流转化为可归档的文档
-- 建立个人技术知识库，方便后续查阅
+- Organize embedded systems, RTOS, power management discussions
+- Convert meeting notes or technical exchanges into archivable documents
+- Build personal technical knowledge base for future reference
 
-## 输出特点
+## Output Characteristics
 
-- 每篇笔记 250-300 字，内容精炼
-- 纯文本格式，无富文本标记
-- 文件名使用中文技术术语，包含关键词
-- 专业客观的技术文档语调
+- 250-300 words per note, concise and focused
+- Plain text format, no rich text markup
+- SEO-optimized filenames with technical keywords
+- Professional and objective technical documentation tone
 
-## 文件名示例
+## Filename Examples
 
+**Chinese:**
 ```
 FreeRTOS电源管理_电源管理器任务优先级设置.txt
 STM32时钟系统_PLL锁相环配置详解.txt
 嵌入式低功耗设计_引用计数电源管理机制.txt
 ```
 
-## 使用方法
+**English:**
+```
+FreeRTOS_Power_Manager_Task_Priority_Configuration.txt
+STM32_Clock_System_PLL_Configuration_Guide.txt
+Embedded_Low_Power_Reference_Counting_Mechanism.txt
+```
 
-调用技能时提供：
-- **topic**: 技术主题（如"FreeRTOS电源管理"）
-- **key_points**: 技术要点列表，每个要点生成一个文件
-- **output_directory**: 输出目录（可选，默认"./notes"）
+## Usage
+
+Provide when invoking the skill:
+- **topic**: Technical topic (e.g., "FreeRTOS Power Management")
+- **key_points**: List of technical points, each generates one file
+- **output_directory**: Output directory (optional, default "./notes")
+
+## Language Adaptation
+
+The skill automatically detects and adapts to the user's preferred language:
+- Chinese input → Chinese output (中文文件名和内容)
+- English input → English output (English filenames and content)
+- Mixed input → Follows the dominant language of the topic

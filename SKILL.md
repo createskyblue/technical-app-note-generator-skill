@@ -1,11 +1,11 @@
 ---
 name: technical-app-note-generator
-description: 将技术讨论内容转化为结构化、原子化的应用笔记（Application Notes），每篇笔记生成独立的TXT纯文本文件，适用于嵌入式系统、RTOS、电源管理等专业技术文档整理。
+description: Convert technical discussions into structured, atomic Application Notes. Generates independent txt files optimized for technical documentation. Language adapts to user preference (Chinese or English).
 ---
 
 # Technical Application Note Generator
 
-将技术讨论内容转化为结构化、原子化的应用笔记（Application Notes），每篇笔记生成独立的TXT纯文本文件。
+将技术讨论内容转化为结构化、原子化的应用笔记（Application Notes），每篇笔记生成独立的TXT纯文本文件。语言根据用户偏好自动适配。
 
 ## 何时使用
 
@@ -26,7 +26,7 @@ description: 将技术讨论内容转化为结构化、原子化的应用笔记�
 ### 工作流程
 
 1. **分析输入要点**: 解析key_points，确保每个要点具备独立成篇的技术深度
-2. **生成元数据**: 为每个要点创建技术标题（5-15个汉字或术语），并生成对应的txt文件名
+2. **生成元数据**: 为每个要点创建技术标题（5-15个字符或术语），并生成对应的txt文件名。标题语言与用户输入语言保持一致
 3. **撰写正文**: 撰写250-300字的技术正文
 4. **质量校验**: 检查字数、扫描表情符号、验证原子性
 5. **文件生成**: 将每篇笔记写入独立的.txt文件
@@ -44,16 +44,21 @@ description: 将技术讨论内容转化为结构化、原子化的应用笔记�
 ```
 
 文件名生成规则：
-- 使用中文技术术语，保持语义完整
+- **语言适配**：根据用户使用语言决定（中文用户使用中文术语，英文用户使用英文术语）
 - 格式：主题关键词 + 核心概念 + 技术要点
-- 长度：15-30个中文字符（不含扩展名）
+- 长度：15-30个字符（不含扩展名）
 - 使用下划线连接各部分
 - 包含关键搜索词，便于AI智能体检索
 
-文件名示例：
+文件名示例（中文）：
 - `FreeRTOS电源管理_电源管理器任务优先级设置.txt`
 - `STM32时钟系统_PLL锁相环配置详解.txt`
 - `嵌入式低功耗设计_引用计数实现机制.txt`
+
+文件名示例（English）：
+- `FreeRTOS_Power_Manager_Task_Priority_Configuration.txt`
+- `STM32_Clock_System_PLL_Configuration_Guide.txt`
+- `Embedded_Low_Power_Reference_Counting_Mechanism.txt`
 
 冲突处理：若文件名重复，添加`_v2`、`_v3`等版本后缀
 
