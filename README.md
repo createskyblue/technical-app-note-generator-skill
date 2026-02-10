@@ -45,6 +45,19 @@ Provide when invoking the skill:
 - **key_points**: List of technical points, each generates one file
 - **output_directory**: Output directory (optional, default "./notes")
 
+## Smart Duplicate Detection
+
+Before creating new notes, the skill automatically:
+- Scans existing notes in the output directory
+- Detects similar notes by comparing keywords and technical concepts
+- **Requires your decision** when similarity > 70%:
+  - **Merge**: Append to existing note
+  - **New Filename**: You provide a new filename (no auto _v2, _v3 suffixes)
+  - **Skip**: Cancel this note
+  - **View**: Check existing content first
+
+**No automatic version numbers** - You always decide the final filename. This keeps your knowledge base clean and meaningful.
+
 ## Language Adaptation
 
 The skill automatically detects and adapts to the user's preferred language:

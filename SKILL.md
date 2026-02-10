@@ -27,9 +27,17 @@ description: Convert technical discussions into structured, atomic Application N
 
 1. **分析输入要点**: 解析key_points，确保每个要点具备独立成篇的技术深度
 2. **生成元数据**: 为每个要点创建技术标题（5-15个字符或术语），并生成对应的txt文件名。标题语言与用户输入语言保持一致
-3. **撰写正文**: 撰写250-300字的技术正文
-4. **质量校验**: 检查字数、扫描表情符号、验证原子性
-5. **文件生成**: 将每篇笔记写入独立的.txt文件
+3. **检查现有笔记**: 扫描output_directory目录，查找相似或相关的现有笔记
+   - 比较标题关键词和技术概念重叠度
+   - 若发现相似度>70%的现有笔记，向用户报告并询问：
+     - 是否合并到现有笔记
+     - 还是另起新文件名（用户提供新标题）
+     - 还是取消生成
+   - 显示现有笔记的标题、文件路径和内容摘要供用户参考
+   - **禁止自动添加版本号**（如_v2、_v3），必须由用户决定最终文件名
+4. **撰写正文**: 撰写250-300字的技术正文
+5. **质量校验**: 检查字数、扫描表情符号、验证原子性
+6. **文件生成**: 根据用户选择执行操作（合并、新建或取消）
 
 ### 内容结构
 
@@ -60,7 +68,7 @@ description: Convert technical discussions into structured, atomic Application N
 - `STM32_Clock_System_PLL_Configuration_Guide.txt`
 - `Embedded_Low_Power_Reference_Counting_Mechanism.txt`
 
-冲突处理：若文件名重复，添加`_v2`、`_v3`等版本后缀
+冲突处理：若文件名重复或检测到相似笔记，必须由用户决定：合并到现有文件、另起新文件名，或取消生成。禁止自动添加版本号后缀
 
 ### 输出格式
 
